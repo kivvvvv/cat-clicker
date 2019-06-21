@@ -2,9 +2,9 @@
 Initially, this mini project was used as a learning playground resource in order to learn the Javascript design pattern. I was taught to build an __organized application__ without an organizational Javascript library or framework. For more detail of this course, please go [here](https://www.udacity.com/course/javascript-design-patterns--ud989).
 
 ## Foreward
-For some time, I was looking for a small project which will serve as a soft introduction to represent what skills I already possessed for potentially my future employer. That is when this project came into my mind.
+For some time, I was looking for a small project which will serve as a soft introduction to represent __some__ skills I already possessed that my future employer might potentially interested. That is when this project came into my mind.
 
-This project may contain some opinionated codes and thoughts, and not strictly follow the course due to the curriculum is not designed for expressing the learner skill but rather for the best learning experience.
+This project may contain some opinionated codes and thoughts, and not strictly follow the course progress due to the curriculum is not designed for expressing the learner's skill but rather for the best learning experience.
 
 If you interested in more advanced project, which might represent more of *myself*, I have a few:
 * [Matching Game](https://github.com/kivvvvv/matching-game) - A board matching game, written in React.
