@@ -4,6 +4,8 @@ Initially, this mini project was used as a learning playground resource in order
 ## Foreward
 For some time, I was looking for a small project which will serve as a soft introduction to represent what skills I already possessed for potentially my future employer. That is when this project came into my mind.
 
+This project may contain some opinionated codes and thoughts, and not strictly follow the course due to the curriculum is not designed for expressing the learner skill but rather for the best learning experience.
+
 If you interested in more advanced project, which might represent more of *myself*, I have a few:
 * [Matching Game](https://github.com/kivvvvv/matching-game) - A board matching game, written in React.
 * [Note App](https://github.com/kivvvvv/note-app) - A responsive note app, powered by React
