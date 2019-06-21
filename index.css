@@ -18,21 +18,54 @@ body {
   background: #ff4d4d;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 body > h1 {
   text-align: center;
+  text-transform: uppercase;
+}
+
+nav {
+  padding: 1rem 0;
+  width: 50%;
+  height: 20vh;
+  max-height: 3.5rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar > li {
+  cursor: pointer;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.navbar > li:hover {
+  border-bottom: 2.5px solid #fab1a0;
 }
 
 main {
   display: flex;
   justify-content: center;
-  text-align: center;
   align-items: center;
+  text-align: center;
+  width: 50%;
 }
 
 figure {
   display: flex;
   flex-direction: column;
-  width: 30vw;
+  width: 50%;
   padding: 20px 0;
   border: 1px solid black;
   background: white;
@@ -51,9 +84,3 @@ figure > header {
 .image-container > img {
   width: 100%;
 }
-
-
-
-
-
-
