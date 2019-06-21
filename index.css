@@ -31,9 +31,9 @@ body > h1 {
 
 nav {
   padding: 1rem 0;
-  width: 50%;
-  height: 20vh;
   max-height: 3.5rem;
+  width: 40%;
+  height: 20vh;
 }
 
 .navbar {
@@ -58,16 +58,16 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 40%;
   text-align: center;
-  width: 50%;
 }
 
 figure {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  padding: 20px 0;
   border: 1px solid black;
+  padding: 15px 0;
+  width: 100%;
   background: white;
   box-shadow: 20px 20px 0 black;
 }
@@ -77,9 +77,11 @@ figure > header {
 }
 
 .image-container {
-  width: 80%;
-  font-size: 0;
   margin: 0 auto;
+  max-height: 55vh;
+  width: 85%;
+  overflow: hidden;
+  font-size: 0;
 }
 .image-container > img {
   width: 100%;
