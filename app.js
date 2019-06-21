@@ -8,6 +8,6 @@
   let iCount = 0;
 
   catImgEl.addEventListener("click", () => {
-    countEl.textContent = iCount++;
+    countEl.textContent = ++iCount;
   });
 })();
