@@ -6,7 +6,41 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <h1>Cat Clicker</h1>
+    <div class="backdrop"></div>
+    <div class="modal">
+      <header class="modal__title"><h1>Admin Area</h1></header>
+      <form class="modal__form" id="formAdminArea">
+        <label
+          >Cat Name
+          <input type="text" id="inputCatName" />
+        </label>
+        <label
+          >Cat Alt Text
+          <input type="text" id="inputCatAltText" />
+        </label>
+        <label
+          >Cat Picture URL
+          <input type="text" id="inputCatUrl" />
+        </label>
+        <label
+          >Credit Badge HTML
+          <input type="text" id="inputCatCreditBadge" />
+        </label>
+        <label
+          >Cat Click Count
+          <input type="text" id="inputClickCount" />
+        </label>
+        <div class="modal__form__actions">
+          <button class="modal__form__action negative" id="cancelButton">
+            CANCEL
+          </button>
+          <button type="submit" class="modal__form__action positive">
+            SAVE
+          </button>
+        </div>
+      </form>
+    </div>
+    <h1 class="main-hearder">Cat Clicker</h1>
     <nav>
       <ul class="navbar"></ul>
     </nav>
@@ -19,6 +53,11 @@
         <div class="image-container"></div>
         <div id="creditBadge"></div>
       </figure>
+      <div class="admin">
+        <button class="admin__button" id="openAdminAreaButton">
+          Admin Area
+        </button>
+      </div>
     </main>
 
     <script src="./app.js"></script>
