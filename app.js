@@ -68,10 +68,7 @@
   const catNavbarView = {
     init: function() {
       this.navbarEl = document.querySelector(".navbar");
-      this.render();
-    },
-    // Render all Navbar items
-    render: function() {
+      // Render all Navbar items
       octopus.getCatClickerDetails().forEach(catClickerDetail => {
         const navbarItemEl = document.createElement("li");
         navbarItemEl.textContent = catClickerDetail.name;
