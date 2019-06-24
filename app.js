@@ -46,6 +46,7 @@
     // A copy of <catsDetails> above, plus a click <count>,
     // so it is named, <catClickerDetails>.
     catClickerDetails: null,
+    currentCatDetail: null,
     init: function() {
       this.catClickerDetails = this.catDetails.map(catDetail => {
         return {
@@ -61,13 +62,29 @@
       model.init();
       catNavbarView.init();
       catClickerView.init();
+      viewAdminAreaForm.init();
+      viewAdminArea.init();
     },
-    getCatClickerDetails: () => model.catClickerDetails
+    getCatClickerDetails: () => model.catClickerDetails,
+    setCurrentCatDetail: currentCatDetail =>
+      (model.currentCatDetail = currentCatDetail),
+    getCurrentCatDetail: () => model.currentCatDetail,
+    editCurrentCatDetail: function({ name, alt, url, creditBadge, count }) {
+      const currentCatDetail = this.getCurrentCatDetail();
+      currentCatDetail.name = name;
+      currentCatDetail.alt = alt;
+      currentCatDetail.url = url;
+      currentCatDetail.creditBadge = creditBadge;
+      currentCatDetail.count = count;
+
+      this.setCurrentCatDetail(currentCatDetail);
+    }
   };
 
   const catNavbarView = {
     init: function() {
       this.navbarEl = document.querySelector(".navbar");
+      this.navbarEl.innerHTML = "";
       // Render all Navbar items
       octopus.getCatClickerDetails().forEach(catClickerDetail => {
         const navbarItemEl = document.createElement("li");
@@ -81,6 +98,7 @@
           (function() {
             return () => {
               catClickerView.render(catClickerDetail);
+              octopus.setCurrentCatDetail(catClickerDetail);
             };
           })(catClickerDetail)
         );
@@ -99,6 +117,7 @@
       // Initially, we render the first item of "catClickerDetails"
       const initialCatClickerDetail = octopus.getCatClickerDetails()[0];
       this.render(initialCatClickerDetail);
+      octopus.setCurrentCatDetail(initialCatClickerDetail);
     },
     // Render a cat's name and count using the given <catClickerDetail>.
     renderCatHeader: function(catClickerDetail) {
@@ -128,6 +147,71 @@
       this.renderCatHeader(catClickerDetail);
       this.renderCatImg(catClickerDetail);
       this.renderCreditBadge(catClickerDetail);
+    }
+  };
+
+  const viewAdminAreaForm = {
+    init: function() {
+      this.formAdminArea = document.querySelector("#formAdminArea");
+      this.inputCatName = document.querySelector("#inputCatName");
+      this.inputCatAltText = document.querySelector("#inputCatAltText");
+      this.inputCatUrl = document.querySelector("#inputCatUrl");
+      this.inputCatCreditBadge = document.querySelector("#inputCatCreditBadge");
+      this.inputClickCount = document.querySelector("#inputClickCount");
+
+      this.formAdminArea.addEventListener("submit", function(e) {
+        e.preventDefault();
+        octopus.editCurrentCatDetail({
+          name: this.inputCatName.value,
+          alt: this.inputCatAltText.value,
+          url: this.inputCatUrl.value,
+          creditBadge: this.inputCatCreditBadge.value,
+          count: this.inputClickCount.value
+        });
+
+        viewAdminArea.hideAdminArea();
+        catClickerView.render(octopus.getCurrentCatDetail());
+        catNavbarView.init();
+      });
+    },
+    render: function() {
+      const currentCatDetail = octopus.getCurrentCatDetail();
+      this.inputCatName.value = currentCatDetail.name;
+      this.inputCatAltText.value = currentCatDetail.alt;
+      this.inputCatUrl.value = currentCatDetail.url;
+      this.inputCatCreditBadge.value = currentCatDetail.creditBadge;
+      this.inputClickCount.value = currentCatDetail.count;
+    }
+  };
+
+  const viewAdminArea = {
+    init: function() {
+      this.openAdminAreaButtonEl = document.querySelector(
+        "#openAdminAreaButton"
+      );
+      this.cancelAdminAreaButtonEl = document.querySelector("#cancelButton");
+      this.backdropEl = document.querySelector(".backdrop");
+      this.modalEl = document.querySelector(".modal");
+
+      this.openAdminAreaButtonEl.addEventListener("click", () => {
+        this.showAdminArea();
+      });
+      this.backdropEl.addEventListener("click", () => {
+        this.hideAdminArea();
+      });
+      this.cancelAdminAreaButtonEl.addEventListener("click", e => {
+        e.preventDefault();
+        this.hideAdminArea();
+      });
+    },
+    showAdminArea: function() {
+      this.backdropEl.style.display = "block";
+      this.modalEl.style.display = "block";
+      viewAdminAreaForm.render();
+    },
+    hideAdminArea: function() {
+      this.backdropEl.style.display = "none";
+      this.modalEl.style.display = "none";
     }
   };
 
