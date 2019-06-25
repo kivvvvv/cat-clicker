@@ -70,6 +70,9 @@
       (model.currentCatDetail = currentCatDetail),
     getCurrentCatDetail: () => model.currentCatDetail,
     editCurrentCatDetail: function({ name, alt, url, creditBadge, count }) {
+      // The <getCurrentCatDetail> returns an object that has a reference-
+      // to the original <catClickerDetails>.
+      // So any changes be made to this object, will reflex the original
       const currentCatDetail = this.getCurrentCatDetail();
       currentCatDetail.name = name;
       currentCatDetail.alt = alt;
@@ -150,6 +153,7 @@
     }
   };
 
+  // Render an admin area form
   const viewAdminAreaForm = {
     init: function() {
       this.formAdminArea = document.querySelector("#formAdminArea");
@@ -184,6 +188,7 @@
     }
   };
 
+  // Render a showing/hiding backdrop/modal
   const viewAdminArea = {
     init: function() {
       this.openAdminAreaButtonEl = document.querySelector(
