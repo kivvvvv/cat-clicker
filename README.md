@@ -6,11 +6,14 @@ Initially, this mini project was **only** used as my learning playground in orde
 
 For some time, I was looking for a small project that not only serve as a representation of _some skill_ that I already possessed, but rather, more importantly, __how I learned what I learned__.
 
-I normally, takessome note when learning. But truthfully, all of them is not well-formatted. Only I myself can read what I write but I can't share it and the whole circle just stop there. 
+I normally, take some note when learning. But truthfully, all of them is not well-formatted. Only I myself can read what I write but I can't share it and the whole circle just stop there. 
 
-However, this is going to be the first time that I share some of my __reflections__ of what I have learned, to practice writting document and maybe gain some confident in the same time. And hopefully, some time later, I will confidently be able to __share my knowledge__ in some form or media that will going to be useful for anyone.
+However, this is going to be the first time that I share some of my __reflections__ of what I have learned, to practice writting document and maybe gain some confident in the same time. And hopefully, some time later, I will confidently be able to __share my knowledge__ in some form or media that will be useful for anyone.
 
-And that is when this project came into my mind. Since then, so I started re-documenting it. However, this may or may not be served as a soft introduction to myself. So, if you interested in more advanced project, which might represent more of _myself_, I have a few:
+And that is when this project came into my mind. Since then, so I started re-documenting it.
+Feel free to proceed to the first section in this repo wiki [here](https://github.com/kivvvvv/cat-clicker/wiki).
+
+However, this may or may not be served as a soft introduction to myself. So, if you interested in more advanced project, which might represent more of _myself_, I have a few:
 
 - [Matching Game](https://github.com/kivvvvv/matching-game) - A board matching game, written in React.
 - [Note App](https://github.com/kivvvvv/note-app) - A responsive note app, powered by React
